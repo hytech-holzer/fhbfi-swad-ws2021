@@ -1,9 +1,6 @@
 package at.ac.fhbfi.covidtestapi.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -14,6 +11,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -25,5 +23,7 @@ public class Person {
 
     @OneToMany(mappedBy = "person")
     private List<CoronaTest> tests = new ArrayList<>();
+
+
 
 }

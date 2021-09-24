@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.Date;
+
 @SpringBootTest
 public class JpaTest {
 
@@ -15,6 +17,24 @@ public class JpaTest {
     private PersonRepository personRepository;
     @Autowired
     private CoronaTestRepository coronaTestRepository;
+
+    @Test
+    public void testCreatePerson() {
+        Person personA = Person.builder()
+                .name("Markus")
+                .birthDate(TestDates.BIRTHDAY_OF_BATMAN.getDate())
+                .build();
+    }
+
+    public enum TestDates {
+        BIRTHDAY_OF_BATMAN;
+
+        public Date getDate() {
+            return null;
+        }
+    }
+
+
     @Test
     public void testPerson() {
         Person person = new Person();
