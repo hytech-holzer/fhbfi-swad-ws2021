@@ -10,6 +10,7 @@ public class CoronaTest {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "FK_PERSON")
     private Person person;
 
     public Long getId() {
