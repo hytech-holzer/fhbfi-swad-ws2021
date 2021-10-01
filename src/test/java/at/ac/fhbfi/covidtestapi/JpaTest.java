@@ -37,23 +37,23 @@ public class JpaTest {
 
     @Test
     public void testPerson() {
-        Person person = new Person();
-        person.setName("Markus");
-        Person person2 = new Person();
-        person2.setName("Max");
-
-
-        personRepository.save(person);
-        personRepository.save(person2);
-        System.out.println(personRepository.findAll().size());
-        System.out.println(personRepository.count());
-        personRepository.findAll().forEach(System.out::println);
-
-        CoronaTest testA = new CoronaTest();
-        coronaTestRepository.save(testA);
-
-        person.getTests().add(testA);
-        personRepository.save(person);
+//        Person person = new Person();
+//        person.setName("Markus");
+//        Person person2 = new Person();
+//        person2.setName("Max");
+//
+//
+//        personRepository.save(person);
+//        personRepository.save(person2);
+//        System.out.println(personRepository.findAll().size());
+//        System.out.println(personRepository.count());
+//        personRepository.findAll().forEach(System.out::println);
+//
+//        CoronaTest testA = new CoronaTest();
+//        coronaTestRepository.save(testA);
+//
+//        person.getTests().add(testA);
+//        personRepository.save(person);
 
 
 

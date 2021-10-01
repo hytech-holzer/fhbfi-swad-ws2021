@@ -8,9 +8,9 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
 @Builder
 public class Person {
     @Id
