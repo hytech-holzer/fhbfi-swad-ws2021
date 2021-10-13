@@ -1,5 +1,7 @@
 package at.ac.fhbfi.covidtestapi.service;
 
+import at.ac.fhbfi.covidtestapi.assembler.PersonAssembler;
+import at.ac.fhbfi.covidtestapi.dto.PersonDTO;
 import at.ac.fhbfi.covidtestapi.entity.CoronaTest;
 import at.ac.fhbfi.covidtestapi.entity.Person;
 import at.ac.fhbfi.covidtestapi.jpa.PersonRepository;
@@ -16,6 +18,8 @@ public class CoronaTestServiceImpl implements CoronaTestService {
 
     @Autowired
     private PersonRepository personRepository;
+    @Autowired
+    private PersonAssembler personAssembler;
 
     @Override
     public void saveNewCoronaTest(Person person, CoronaTest coronaTest) {
@@ -23,8 +27,8 @@ public class CoronaTestServiceImpl implements CoronaTestService {
     }
 
     @Override
-    public List<Person> getAllPersons() {
-        return personRepository.findAll();
+    public List<PersonDTO> getAllPersons() {
+        return personAssembler.assemble(personRepository.findAll());
     }
 
     @Override

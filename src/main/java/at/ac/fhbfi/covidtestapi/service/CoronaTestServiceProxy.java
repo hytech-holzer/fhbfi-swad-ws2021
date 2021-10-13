@@ -1,5 +1,6 @@
 package at.ac.fhbfi.covidtestapi.service;
 
+import at.ac.fhbfi.covidtestapi.dto.PersonDTO;
 import at.ac.fhbfi.covidtestapi.entity.CoronaTest;
 import at.ac.fhbfi.covidtestapi.entity.Person;
 import lombok.RequiredArgsConstructor;
@@ -29,7 +30,7 @@ public class CoronaTestServiceProxy implements CoronaTestService {
     }
 
     @Override
-    public List<Person> getAllPersons() {
+    public List<PersonDTO> getAllPersons() {
         return new ArrayList<>();
     }
 }

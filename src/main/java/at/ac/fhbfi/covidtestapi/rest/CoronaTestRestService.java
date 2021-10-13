@@ -1,6 +1,7 @@
 package at.ac.fhbfi.covidtestapi.rest;
 
 
+import at.ac.fhbfi.covidtestapi.dto.PersonDTO;
 import at.ac.fhbfi.covidtestapi.entity.CoronaTest;
 import at.ac.fhbfi.covidtestapi.entity.Person;
 import at.ac.fhbfi.covidtestapi.jpa.PersonRepository;
@@ -33,7 +34,7 @@ public class CoronaTestRestService {
     }
 
     @GetMapping(value = "/persons")
-    public List<Person> getAllPersons() {
+    public List<PersonDTO> getAllPersons() {
         return coronaTestService.getAllPersons();
     }
     @GetMapping(value = "/person")

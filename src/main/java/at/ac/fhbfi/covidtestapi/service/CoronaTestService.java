@@ -1,5 +1,6 @@
 package at.ac.fhbfi.covidtestapi.service;
 
+import at.ac.fhbfi.covidtestapi.dto.PersonDTO;
 import at.ac.fhbfi.covidtestapi.entity.CoronaTest;
 import at.ac.fhbfi.covidtestapi.entity.Person;
 
@@ -11,6 +12,6 @@ public interface CoronaTestService {
 
     void saveNewPerson(String name);
 
-    List<Person> getAllPersons();
+    List<PersonDTO> getAllPersons();
 
 }
