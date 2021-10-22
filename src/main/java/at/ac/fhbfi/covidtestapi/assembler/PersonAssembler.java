@@ -6,7 +6,9 @@ import org.springframework.stereotype.Component;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class PersonAssembler extends AbstractAssembler<Person, PersonDTO> {
@@ -24,6 +26,8 @@ public class PersonAssembler extends AbstractAssembler<Person, PersonDTO> {
 
     @Override
     protected List<PersonDTO> applySort(List<PersonDTO> list) {
-        return super.applySort(list);
+        return list.stream()
+                .sorted(Comparator.comparing(PersonDTO::getName))
+                .collect(Collectors.toList());
     }
 }

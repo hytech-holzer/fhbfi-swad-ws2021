@@ -12,6 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import javax.annotation.PostConstruct;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 @SpringBootApplication
 public class CovidTestApiApplication {
@@ -30,7 +32,9 @@ public class CovidTestApiApplication {
     @PostConstruct
     public void initTestData() {
 
-        personRepository.save(Person.builder().name("Markus Holzer").build());
+        Calendar cal = GregorianCalendar.getInstance();
+        cal.set(1982, Calendar.FEBRUARY, 10);
+        personRepository.save(Person.builder().name("Markus Holzer").birthDate(cal.getTime()).build());
         personRepository.save(Person.builder().name("Doris").build());
 
 
